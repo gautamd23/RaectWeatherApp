@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/RaectWeatherApp/static/css/main.aa9a372d.css",
+    "main.js": "/RaectWeatherApp/static/js/main.bf22a540.js",
+    "static/js/787.848d432a.chunk.js": "/RaectWeatherApp/static/js/787.848d432a.chunk.js",
+    "static/media/vclouds.mp4": "/RaectWeatherApp/static/media/vclouds.f283c1d614dcaeb98ced.mp4",
+    "static/media/logo.svg": "/RaectWeatherApp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/RaectWeatherApp/index.html",
+    "main.aa9a372d.css.map": "/RaectWeatherApp/static/css/main.aa9a372d.css.map",
+    "main.bf22a540.js.map": "/RaectWeatherApp/static/js/main.bf22a540.js.map",
+    "787.848d432a.chunk.js.map": "/RaectWeatherApp/static/js/787.848d432a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa9a372d.css",
+    "static/js/main.bf22a540.js"
+  ]
+}
