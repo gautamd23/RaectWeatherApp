@@ -1,13 +1,301 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  /* font-weight: 900; */
+  height: 100vh;
+  color: #222;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  width: 130rem;
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* background-color: rgb(253, 254, 254); */
+  /* background: url("./clouds.jpg"); */
+  background-size: cover;
+  padding: 6rem 0;
+  border-radius: 20px;
+}
+.gradient-text {
+  /* font-size: 70px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  background: -webkit-linear-gradient(#eeeeee, #de4996);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  background-color: #ca4246;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(
+    45deg,
+    #ca4246 16.666%,
+    #e16541 16.666%,
+    #e16541 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    #8b9862 50%,
+    #8b9862 66.666%,
+    #476098 66.666%,
+    #476098 83.333%,
+    #a7489b 83.333%
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+.gradient-text:hover {
+  animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+@keyframes rainbow-text-simple-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes rainbow-text-simple-animation {
+  0% {
+    background-size: 100%;
+  }
+  80% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 650%;
+  }
+}
+h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 600;
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 0;
+  /* margin-bottom: -0.25em; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  animation: moveInLeft 5s ease-in forwards;
+  
+  
+  /* width: 605px; */
+}
+.app input {
+  width: 400px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding-left: 20px;
+  font-size: 15px;
+  animation-name: moveUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  outline: none;
+  color: black;
+  background: linear-gradient(to right, rgb(251, 81, 81), rgba(135, 36, 36, 0));
+}
+.weather {
+  display: flex;
+  gap: 2.4rem;
+  /* animation-name: moveUp;
+  animation-duration: 5s;
+  animation-timing-function: ease-out; */
+  transition: ease-in;
+}
+
+.day {
+  /* flex-basis: calc(33.33% - 10px); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.6rem 0 2rem;
+  /* width: 12.8rem; */
+  flex-basis: calc(50% - 10px);
+  font-weight: 500;
+  
+}
+
+h2 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.day span {
+  font-size: 80px;
+}
+
+.myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .myVideo {
+    height: auto;
+    width: 100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .myVideo {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  /* 80% {
+    opacity: 0.7;
+    transform: translateX(-px);
+  } */
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* .app input {
+  
+  padding: 6px 12px;
+  background: rgb(31, 32, 35);
+  border: 1px solid rgb(60, 63, 68);
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgb(247, 248, 248);
+  height: 46px;
+  appearance: none;
+  transition: border 0.15s ease 0s;
+  :focus{
+      outline: none;
+      box-shadow: none;
+      border-color: rgb(100, 153, 255);
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  .day {
+    flex-basis: 100%;
+    flex-basis: calc(33.33% - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width:auto;
+  text-align: center;
+  }
+  .app {
+    width: 90%;
+    padding: 2rem ;
+    gap: 2rem; /* Adjusted gap for smaller screens */
+    max-width: 130rem; /* Set a maximum width if needed */
+    padding: 6rem 2rem; /* Adjusted padding */
+    box-sizing: border-box; /* Added box-sizing */
+    padding: 2rem; /* Adjusted padding for smaller screens */
+    margin: 0 auto; 
+  }
+  .app input {
+    width: 60%;
+    height: 30px; /* Adjusted height for smaller screens */
+    font-size: 1.4rem; /* Adjusted font size for smaller screens */
+    /* ... (unchanged styles) */
+  }
+  .myVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 3.6rem;
+    text-align: center;
+    -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  }
+  .weather {
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+    display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  .day span {
+    font-size: 20px;
+  }
 }
